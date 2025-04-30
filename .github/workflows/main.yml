@@ -118,6 +118,7 @@ jobs:
       with:
         name: helm-package
         path: ./*.tgz
+
   deploy-helm-dev:
     name: Deploy Helm
     uses: ./.github/workflows/main.yml
@@ -129,7 +130,7 @@ jobs:
 
   deploy-helm-staging:
     name: Deploy Helm
-    uses: ./.github/workflows/main.yml
+    uses: ./.github/workflows/deployment-workflow.yml 
     needs: deploy-helm-dev
     secrets: inherit
     with:
