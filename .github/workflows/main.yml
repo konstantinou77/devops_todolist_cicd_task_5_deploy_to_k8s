@@ -14,10 +14,7 @@ on:
 env:
  PythonVersion: 3.8
  DockerUsername: konstant1nou77
- DockerImageName: todoapp:be7d32c98fdd4c7a80409c24cad44397b68f8dc1
- EnvironmentName: Development
-
-
+ DockerImageName: todoapp
 jobs:
   python-ci:
     runs-on: ubuntu-latest
