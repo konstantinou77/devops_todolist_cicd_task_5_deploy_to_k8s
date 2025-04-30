@@ -26,3 +26,7 @@ mysql:
       capacity: "1Gi"
     persistentVolumeClaim:
       requestStorage: "1Gi"
+
+  todoapp:
+  service:
+    nodePort: 30008
