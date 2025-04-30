@@ -4,8 +4,7 @@ todoapp:
     repository: konstant1nou77/todoapp
 
 mysql:
-   namespace: mysql-staging
-
+  namespace: mysql-staging
   resources:
     requests:
       memory: "256Mi"
