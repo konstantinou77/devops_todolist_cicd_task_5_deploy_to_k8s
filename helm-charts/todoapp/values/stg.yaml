@@ -1,7 +1,7 @@
 todoapp:
   namespace: todoapp-staging
   image:
-    repository: konstant1nou77/todoapp
+    repository: ikulyk404/todoapp
   service:
     nodePort: 30008
 
