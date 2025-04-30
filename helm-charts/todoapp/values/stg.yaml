@@ -1,7 +1,10 @@
 todoapp:
-  namespace: todoapp
+  namespace: todoapp-staging
   image:
     repository: ikulyk404/todoapp
+
+mysql:
+   namespace: mysql-staging
 
   resources:
     requests:
