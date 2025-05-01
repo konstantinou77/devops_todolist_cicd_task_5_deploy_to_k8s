@@ -68,6 +68,12 @@ jobs:
             --set todoapp.secrets.DB_PASSWORD="${{ secrets.DB_PASSWORD }}" \
             --set todoapp.secrets.DB_HOST="${{ secrets.DB_HOST }}" \
             --set todoapp.image.version=${{ github.sha }}
+      - name: Uninstall previous Helm release (if exists)
+        run: |
+            helm status ${{ inputs.helm-release-name }} -n ${{ inputs.environment }} >/dev/null 2>&1 && \
+            helm uninstall ${{ inputs.helm-release-name }} -n ${{ inputs.environment }} || \
+            echo "No previous release to uninstall"
+
 
       - name: Deploy Helm to Development
         run: |
