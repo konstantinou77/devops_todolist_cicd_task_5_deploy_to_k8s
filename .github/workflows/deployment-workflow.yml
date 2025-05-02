@@ -58,8 +58,6 @@ jobs:
       - name: Helm Dry Run
         run: |
           helm upgrade --install --dry-run --wait --debug ${{ inputs.helm-release-name }} ./todoapp-*.tgz \
-            --namespace mysql-staging \
-            --create-namespace \
             -f ${{ inputs.helm-values-path }} \
             --set global.environment="${{ inputs.environment }}" \
             --set mysql.secrets.MYSQL_ROOT_PASSWORD="${{ secrets.MYSQL_ROOT_PASSWORD }}" \
@@ -72,11 +70,10 @@ jobs:
             --set todoapp.secrets.DB_HOST="${{ secrets.DB_HOST }}" \
             --set todoapp.image.version=${{ github.sha }}
 
-      - name: Deploy Helm to Environment
+
+      - name: Deploy Helm to Development
         run: |
           helm upgrade --install --atomic --wait --timeout 1800s --debug ${{ inputs.helm-release-name }} ./todoapp-*.tgz \
-            --namespace mysql-staging \
-            --create-namespace \
             -f ${{ inputs.helm-values-path }} \
             --set global.environment="${{ inputs.environment }}" \
             --set mysql.secrets.MYSQL_ROOT_PASSWORD="${{ secrets.MYSQL_ROOT_PASSWORD }}" \
