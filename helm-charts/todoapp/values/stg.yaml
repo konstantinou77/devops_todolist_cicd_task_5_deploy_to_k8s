@@ -19,9 +19,9 @@ mysql:
     minReplicas: 2
     maxReplicas: 5
     cpu:
-      avarageUtilization: 70
+      averageUtilization: 70
     memory:
-      avarageUtilization: 70
+      averageUtilization: 70
 
   volumes:
     persistentVolume:
