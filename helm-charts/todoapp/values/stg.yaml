@@ -6,7 +6,7 @@ todoapp:
     nodePort: 30008
 
 mysql:
-  namespace: mysql
+  namespace: mysql-staging
   resources:
     requests:
       memory: "256Mi"
